@@ -180,8 +180,8 @@ def slopeize(s: pd.Series) -> pd.Series:
         if idx + 1 == length:
             ret.append(0)
             
-        elif idx == 0:
-            ret.append(0)
+        # elif idx == 0:
+        #     ret.append(0)
 
         else:
             ret.append(
@@ -199,7 +199,7 @@ def on_data(datas: Dict[str, pd.DataFrame]):
 
         if data.empty:
             RuntimeError
-            
+
         close_max = data["close"].max()
         close_min = data["close"].min()
 
