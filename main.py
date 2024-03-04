@@ -203,6 +203,7 @@ def on_data(datas: Dict[str, pd.DataFrame]):
         close_max = data["close"].max()
         close_min = data["close"].min()
 
+        # logger.debug(data["close"])
         close_cur = data["close"].iloc[-1]
 
         close_at_min = close_cur == close_min
