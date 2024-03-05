@@ -233,11 +233,11 @@ def on_data(datas: Dict[str, pd.DataFrame]):
         elif close_at_min:
             log(f"{name} 达到最低点 {close_min}", data.index[-1])
 
-        elif close_cur < close_at_max and len(data["close"]) >= 3 and close_at_max == data["close"].iloc[-3:].max():
+        elif close_cur < close_max and len(data["close"]) >= 3 and close_max == data["close"].iloc[-3:].max():
             # 最近处于最低点
             log(f"{name} 当前价格 {close_cur} 开始从最高点 {close_max} 跌下", data.index[-1])
         
-        elif close_cur > close_at_min and len(data["close"]) >= 3 and close_at_min == data["close"].iloc[-3:].min():
+        elif close_cur > close_min and len(data["close"]) >= 3 and close_min == data["close"].iloc[-3:].min():
             log(f"{name} 当前价格 {close_cur} 开始从最低点 {close_min} 爬升", data.index[-1])
 
         else:
